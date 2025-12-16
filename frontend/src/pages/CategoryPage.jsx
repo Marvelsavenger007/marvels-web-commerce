@@ -1,9 +1,9 @@
-import React, { useEffect } from 'react'
+import  { useEffect } from 'react'
 import { useProductStore } from '../stores/useProductStore'
 import { useParams } from 'react-router-dom';
 import { motion }   from "framer-motion"
 import ProductCard from '../components/ProductCard';
-import { ArrowLeft } from 'lucide-react';
+// import { ArrowLeft } from 'lucide-react';
 
 const CategoryPage = () => {
     const {fetchProductsByCategory, products} = useProductStore();
@@ -17,11 +17,11 @@ const CategoryPage = () => {
     console.log("products:", products);
   return (
     <div className='min-h-screen'>
-        <ArrowLeft 
-            className=' top-6 ml-16 text-emerald-400
+        {/* <ArrowLeft 
+            className=' mt-36 ml-16 text-emerald-400
             w-8 h-8 cursor-pointer' 
             onClick={() => window.history.back()}
-        />
+        /> */}
         <div className='relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16'>
             <motion.h1
                 className='text-center text-4xl sm:text-5xl font-bold text-emerald-400 mb-8'
