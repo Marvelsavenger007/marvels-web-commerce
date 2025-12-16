@@ -1,7 +1,7 @@
 import { ArrowRight, CheckCircle, HandHeart } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useEffect, useState} from "react";
-import useCartStore from "../stores/useCartStore"; // ✅ Default import
+import useCartStore from "../stores/useCartStore";
 import axios from "../lib/axios";
 import ReactConfetti from "react-confetti";
 
@@ -34,7 +34,14 @@ const PurchaseSuccessPage = () => {
         }
     }, [clearCart]);
 
-    if (isProcessing) return "Processing...";
+   if (isProcessing)
+     return (
+        <>
+            <h1 className="text-center text-2xl text-white mt-20">
+            Processing your order...
+            </h1>
+        </>
+     );
 
     if (error) return `Error: ${error}`;
 
