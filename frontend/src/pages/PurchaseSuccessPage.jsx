@@ -81,7 +81,7 @@ const PurchaseSuccessPage = () => {
                     </div>
                 </div>
                 <div className="space-y-4">
-                    <button className="cursor-pointer w-full bg-emerald-600 hover:bg-emerald-700 font-bold py-2 px-4 text-white
+                    <button className="w-full bg-emerald-600 hover:bg-emerald-700 font-bold py-2 px-4 text-white
                         rounded-lg transition duration-300 flex items-center justify-center">
                             <HandHeart className="mr-2" size={18} />
                             Thanks for trusting us!
