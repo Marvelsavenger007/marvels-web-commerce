@@ -1,7 +1,7 @@
 import { ArrowRight, CheckCircle, HandHeart } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useEffect, useState} from "react";
-import useCartStore from "../stores/useCartStore";
+import {useCartStore} from "../stores/useCartStore";
 import axios from "../lib/axios";
 import ReactConfetti from "react-confetti";
 

@@ -1,15 +1,14 @@
 import { create } from 'zustand';
 import axios from "../lib/axios"
 import { toast } from "react-hot-toast";
-import { use } from 'react';
 
-export const useUserStore = create ((set, get) => ({
+export const useUserStore = create((set, get) => ({
     user: null,
     loading: false,
     checkingAuth: false,
 
     signup: async ({ name, email, password, confirmPassword }) => {
-        set({loading: true});
+        set({loading: false });
 
         if (password !== confirmPassword) {
             set ({ loading: false });
@@ -24,16 +23,25 @@ export const useUserStore = create ((set, get) => ({
         }
     },
     
-    login: async ( email, password ) => {
-        set({loading: true});
+    login: async (email, password) => {
+        set({ loading: true });
+
         try {
-            const res = await axios.post("/auth/login", { email, password});
-            set ({ user: res.data, loading: false });            
+            const res = await axios.post("/auth/login", { email, password });
+            set({ user: res.data, loading: false });
+
         } catch (error) {
-            set ({ loading: false });
-            toast.error(error.response.data.message || "login failed failed");
+            set({ loading: false });
+
+            const message =
+                error.response?.data?.message ||
+                error.message ||
+                "Login failed";
+
+            toast.error(message);
         }
     },
+
 
     logout: async () => {
         try {

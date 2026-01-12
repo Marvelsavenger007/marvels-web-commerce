@@ -10,7 +10,7 @@ import LoadingSpinner from './components/LoadingSpinner';
 import AdminPage from './pages/AdminPage';
 import CategoryPage from './pages/CategoryPage';
 import CartPage from './pages/CartPage';
-import useCartStore from './stores/useCartStore';
+import {useCartStore} from './stores/useCartStore';
 import PurchaseSuccessPage from './pages/PurchaseSuccessPage';
 import PurchaseCancelPage from './pages/PurchaseCancelPage';
 

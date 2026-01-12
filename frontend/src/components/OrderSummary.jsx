@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import useCartStore from "../stores/useCartStore";
+import {useCartStore} from "../stores/useCartStore";
 import { Link } from "react-router-dom";
 import axios from "../lib/axios"
 import { MoveRight } from "lucide-react";
